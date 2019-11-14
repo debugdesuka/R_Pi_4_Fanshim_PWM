@@ -1,0 +1,77 @@
+mkdir /home/pi/code
+mkdir /home/pi/code/log
+mkdir /home/pi/code/old
+#copy files from cos point de archive to /code
+cd /home/pi/code
+sudo chmod +x *.sh
+sudo chown pi:pi *.*
+sudo apt update
+sudo apt upgrade 
+sudo apt install tmux
+mkdir /tmp//tmux-1000/default
+#at this point the command "sudo ./tmux_stat.sh" will work but both tmux sessions will fail due to errors
+#you could run the following two commands to check why
+
+# 'cd code' then 
+# 'python3 /home/pi/code/temp_control_035.py' then after try next line
+
+# and  'cd code' then   
+#'python3 /home/pi/code/watch_dog_035.py'
+
+# and you will find that the following may be needed if these items not installed/done already
+
+sudo apt install nginx
+sudo chown -R pi /var/www/html/
+sudo apt-get install python3-w1thermsensor
+
+#at this point the command "sudo ./tmux_stat.sh" can be tried again and
+# then use "tmux ls" to see if the processes are running
+
+
+
+
+
+#!/bin/bash
+echo NEXT: sudo apt-get update
+# sudo apt-get update
+echo ---------------
+echo NEXT: sudo apt-get upgrade
+# sudo apt-get upgrade
+echo ---------------
+echo NEXT: sudo apt-get install firefox-esr
+# sudo apt-get install firefox-esr
+echo ---------------
+echo NEXT: sudo apt-get install bareftp
+# sudo apt-get install bareftp
+echo ---------------
+echo NEXT: sudo apt-get install gparted
+# sudo apt-get install gparted
+echo ---------------
+echo NEXT: sudo apt-get install nginx
+# sudo apt-get install nginx
+echo ---------------
+echo NEXT: sudo pip3 install w1thermsensor
+# sudo pip3 install w1thermsensor
+echo ---------------
+echo NEXT:  sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+echo NEXT: sudo apt-get install -y nodejs
+# sudo apt-get install -y nodejs
+echo ---------------
+echo NEXT: check for version with node -v
+node -v
+echo ---------------
+echo NEXT: instal cloud cmnd with sudo npm i cloudcmd -g
+sudo npm i cloudcmd -g
+echo ---------------
+echo NEXT: change permission on server directory with sudo chown -R pi /var/www/html
+sudo chown -R pi /var/www/html
+echo ---------------
+#echo NEXT:  SET UP Dataplicity using     curl https://www.dataplicity.com/gyefzuh4.py | sudo python 
+#curl https://www.dataplicity.com/gyefzuh4.py | sudo python 
+#echo ---------------
+echo NEXT: 
+echo ---------------
+echo NEXT:  
+
+
