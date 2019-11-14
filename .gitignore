@@ -1,0 +1,10 @@
+__pycache__/
+log/
+old/
+*.html
+old*/ 
+cpu_wd.csv
+wd.csv
+*.txt
+*that used*.*
+
