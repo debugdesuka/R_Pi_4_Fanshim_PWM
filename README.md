@@ -157,9 +157,9 @@ to exit that tmux window enter
 "ctrl-b" then "d"
 '''
 ## All the ways to stop the python3 code
-*In tmux window enter "ctrl C", 
-*in fanshim directory enter "./tmux_stop.sh" (will also stop a running stress test) or 
-*enter "tmux kill-session -t fanshim"
+* In tmux window enter "ctrl C", 
+* in fanshim directory enter "./tmux_stop.sh" (will also stop a running stress test) or 
+* enter "tmux kill-session -t fanshim"
 
 ## "What Else you doing? and About using GitHub with Dataplicity 
 
