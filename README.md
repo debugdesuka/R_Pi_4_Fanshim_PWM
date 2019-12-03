@@ -4,7 +4,7 @@
 
 To install this code that was controlling the fan on my R Pi 4 on December 3rd 2019 use the usual green "Clone or Download" button above.
 
-This code was copied in from the [pwm_fanshim](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging/tree/pwm_fanshim) branch of my [RPi4_Python_FanshimPWM_Temperature_Control_with_logging](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging) repository on December 3rd 2019.
+This code was copied in from the [pwm_fanshim](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging/tree/pwm_fanshim) branch of my [RPi4_Python_FanshimPWM_Temperature_Control_with_logging](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging) repository on December 3rd 2019 where I will continue to develope the code further.
 
 This is a stable version that had been running for several days.  I have included a large log file from the R Pi 4  running continuously for several days and some screenshots of the HTML logging file.
 
