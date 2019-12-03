@@ -37,7 +37,9 @@ sudo apt-get install tmux
 or I prefer
 [Daniel Miessler tmux](https://danielmiessler.com/study/tmux/) and best of all [Dataplicity.com docs Run Your Scripts In Background](https://docs.dataplicity.com/docs/run-your-scripts-in-background)
 '''
-or many other places if you google for  "tmux tutorial"
+or many other places if you google for  "tmux tutorial".
+
+NOTE: If you download the files and install using the Zip file you may need to change the permissions on the tmux ..sh files to make them executable. 
 
 ## Install Stress Testing
 
