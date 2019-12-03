@@ -1,5 +1,6 @@
 #!/bin/bash
-cd /home/pi/code
-tmux kill-session -t ctrl
-tmux kill-session -t cpu
-tmux kill-session -t fan
+cd /home/pi/fanshim
+echo looking to kill any old fanshim stress session
+tmux kill-session -t fanshim
+echo looking to kill any old tmux stress session
+tmux kill-session -t stress
