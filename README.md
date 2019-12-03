@@ -6,7 +6,7 @@ To install this code that was controlling the fan on my R Pi 4 on December 3rd 2
 
 This code was copied in from the [pwm_fanshim](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging/tree/pwm_fanshim) branch of my [RPi4_Python_FanshimPWM_Temperature_Control_with_logging](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging) repository on December 3rd 2019.
 
-This is a stable version that had been running for several days.  I have included a large log file from the R Pi 4  running continuosly for several days and some screenshots of the HTML logging file.
+This is a stable version that had been running for several days.  I have included a large log file from the R Pi 4  running continuously for several days and some screenshots of the HTML logging file.
 
 I would suggest putting the files in a directory /home/pi/fanshim and then following the instructions below.
 
@@ -19,13 +19,13 @@ The use of FTP to a remote site is optional and if no FTP Credential file is set
 
 ## Proposed solution I will work on in next months.
 
-* Make the FTP a separet tmux triggered process
+* Make the FTP a separate tmux triggered process
 * Start a new log file periodically
 * Reduce the amount of data sent to log file when R Pi is "idle" and fan not in use.
 
 ## Install Tmux
 
-You will need to install "TMUX" to start the code in the way recomended using
+You will need to install "TMUX" to start the code in the way recommended using
 
 '''
 sudo apt-get install tmux
@@ -68,9 +68,9 @@ To use FTP to a website edit "ftp_creds PATTERN.csv" and put it in a location th
 
 If there is no file matching then FTP is not attempted. If the credentials are not right then FTP attempts will time out after the period set in the config.cfg file.
 
-Similarly if the directory "/var/www/html/" does not exist because web server is not set up the copy of files there will simply fail.
+Similarly, if the directory "/var/www/html/" does not exist because web server is not set up the copy of files there will simply fail.
 
-(You can set up server with"sudo apt install nginx" then "sudo chown -R pi /var/www/html/" so the folder is writeable by the code. )
+(You can set up server with "sudo apt install nginx" then "sudo chown -R pi /var/www/html/" so the folder is writeable by the code. )
 
 ## Testing
 
@@ -84,7 +84,7 @@ python3 fanshim.py
 
 to check code working
 
-then enterthis to run stress test
+then enter this to run stress test
 
 '''
 ./tmux_stress.sh
@@ -108,7 +108,7 @@ tmux ls
 
 ## Tweaking
 
-Then you can try editing the parameters in config.cfg to see if you get get the control more to your liking.
+Then you can try editing the parameters in config.cfg to see if you get the control more to your liking.
 
 Then do a reboot and check the code runs automatically at start up.
 
@@ -128,12 +128,12 @@ or open the html file with your browser
 /home/pi/fanshim/fanshim_log.html
 '''
 
-it will be in either of these locations : 
+it should be in both of these locations (as well as copied to website if FTP was set up) : 
 "/home/pi/fanshim"  and "/var/www/html" ,
 
-The file at "/var/www/html" can be opened with a browser from  any device on your local network using , from any device using the RPi's IP address e.g. 192.168.0.101/fanshim_log.html, (use "ifconfig" to get address).
+The file at "/var/www/html" can be opened with a browser from  any device on your local network using , from any device using the RPi's IP address e.g. 192.168.0.101/fanshim_log.html, (use "ifconfig" at the terminal to get the IP address).
 
-On my web site I use an iframe to show the file in a Joomla Article; this is the html used:
+On my web site I have in the past used an iframe to show the "live" file in a Joomla Article; this is the html used:
 
 '''
 \<p\>\<iframe src="https\:\/\/www\.ftp4rpi\.smalle\.uk/house/fanshim_log\.html" frameborder="0" width="1100" height="1000" style="float: left;"\>\</iframe\>\</p\>
@@ -141,7 +141,7 @@ On my web site I use an iframe to show the file in a Joomla Article; this is the
 
 The HTML file only shows recent data but all data since start up is in a csv log file you can open with a spreadsheet they are in "/home/pi/fanshim/log" and "/var/www/html/log".
 
-There is a link at the top of the html file that link to the CSV log file. The csv files are retained until deleted whereas html files get overwritten; so the csv file is the best way to review long term behaviour.
+There is a link at the top of the html file that link to the CSV log file. The csv files are retained until deleted whereas html files get overwritten; so, the csv file is the best way to review long term behaviour.
 
 You can us this command to open a "tmux window" to observe the code's print out
 
@@ -154,16 +154,14 @@ to exit that tmux window enter
 '''
 "ctrl-b" then "d"
 '''
+## All the ways to stop the python3 code
+*In tmux window enter "ctrl C", 
+*in fanshim directory enter "./tmux_stop.sh" (will also stop a running stress test) or 
+*enter "tmux kill-session -t fanshim"
 
-To stop the code while in the tmux window enter "ctrl C".
+## "What Else you doing? and About using GitHub with Dataplicity 
 
-## To Stop
-
-In tmux window enter "ctrl C", in fanshim directory enter "./tmux_stop.sh", or enter "tmux kill-session -t fanshim"
-
-## About using GitHub with Dataplicity 
-
-### What else I am up to
+### What else I am up to?
 This pwm_fanshim branch is from my github directory where I am developing variations of this sort of control function for cooling and heating with logging and remote monitoring.  This branch only has what is needed for PWM of the fanshim.
 
 I had used the earlier version developed without GitHub (silly me!) for controlling fan heaters using TPLink Smartplugs with remote monitoring of a  community workshop for over two years.  I also had a version for PWM control of a Sauna Heater. Soon I will redo these using the same background classes.
