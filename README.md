@@ -1,20 +1,31 @@
-# R Pi 4 Python Fanshim PWM_Temperature Control with logging  BRANCH: Just PWM Fanshim
+# R Pi 4 Python Fanshim PWM_Temperature Control with logging
 
 ## Get code
 
-To install the code that is controlling the fan on my R Pi 4 and producing the data shown via this link to [the html file uploaded to my website](https://www.ftp4rpi.smalle.uk/house/fanshim_log.html) enter this command in the terminal:
+To install this code that was controlling the fan on my R Pi 4 on December 3rd 2019 use the usual green "Clone or Download" button above.
 
-'''
-git clone https\://github\.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging\.git -b pwm_fanshim --single-branch /home/pi/fanshim/
-'''
+This code was copied in from the [pwm_fanshim](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging/tree/pwm_fanshim) branch of my [RPi4_Python_FanshimPWM_Temperature_Control_with_logging](https://github.com/grayerbeard/RPi4_Python_FanshimPWM_Temperature_Control_with_logging) repository on December 3rd 2019.
 
-That will create the folder "fanshim" (dont create it before) and install the code as a local git repository by extracting just this branch. (Edit /home/pi/fanshim/.git/config to connect to your own repository, see [create-a-repo](https://help.github.com/en/github/getting-started-with-github/create-a-repo))
+This is a stable version that had been running for several days.  I have included a large log file from the R Pi 4  running continuosly for several days and some screenshots of the HTML logging file.
+
+I would suggest putting the files in a directory /home/pi/fanshim and then following the instructions below.
 
 The use of FTP to a remote site is optional and if no FTP Credential file is set up will be bypassed with data just logged locally.  The point of this long term logging is that stress tests does not tell you what is happening under normal use when ideally you want a reasonable temperature maintained with minimal use of the fan.
 
+## Issues
+
+· After several days the csv file gets quite big and causes code to run slower.
+· Related to above the use of FTP starts to cause problems with the time taken to upload files.
+
+## Proposed solution I will work on in next months.
+
+· Make the FTP a separet tmux triggered process
+· Start a new log file periodically
+· Reduce the amount of data sent to log file when R Pi is "idle" and fan not in use.
+
 ## Install Tmux
 
-Then install "TMUX" using
+You will need to install "TMUX" to start the code in the way recomended using
 
 '''
 sudo apt-get install tmux
