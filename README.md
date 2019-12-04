@@ -1,5 +1,9 @@
 # R Pi 4 Python Fanshim PWM_Temperature Control with logging
 
+## Notes
+December 4th: added an alternative algorithm and the ability to switch to it by editing fanshim.py. See lines 50 to 54.
+The alternative ensures fan runs at atleast 50% f there has been a larger increase in temperature and continues to run until temperature has dropped a little lower.  The amount used when checking for temp rise and lowering temp is a quarter of the span between low temp and high temp.
+
 ## Get code
 
 To install this code that was controlling the fan on my R Pi 4 on December 3rd 2019 use the usual green "Clone or Download" button above.
