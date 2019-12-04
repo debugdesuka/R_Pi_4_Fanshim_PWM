@@ -18,7 +18,7 @@
 # title           :alternative_algorithm_using_quarter_spans.py
 # description     :pwm control for R Pi Cooling Fan
 # author          :David Torrens
-# invented date   :2019 12 204
+# invented date   :2019 12 4
 # version         :0.1
 # python_version  :3
 
