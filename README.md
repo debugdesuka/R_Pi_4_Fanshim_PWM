@@ -2,7 +2,7 @@
 
 ## Notes
 December 4th: added an alternative algorithm and the ability to switch to it by editing fanshim.py. See lines 50 to 54.
-The alternative ensures fan runs at atleast 50% f there has been a larger increase in temperature and continues to run until temperature has dropped a little lower.  The amount used when checking for temp rise and lowering temp is a quarter of the span between low temp and high temp.
+The alternative ensures fan runs at at least 50% if there has been a larg increase in temperature and continues to run until temperature has dropped a little lower.  The amount used when checking for temp rise and lowering temp is a quarter of the span between low temp and high temp that were set in config.cfg.
 
 For more about the Circular Buffer for logging recent data to an HTML file see my [text_buffer](https://github.com/grayerbeard/text_buffer) repository Readme file.
 
@@ -22,12 +22,14 @@ The use of FTP to a remote site is optional and if no FTP Credential file is set
 
 * After several days the csv file gets quite big and causes code to run slower.
 * Related to above the use of FTP starts to cause problems with the time taken to upload files.
+* A restart is required to reread a new value from the config.cfg file
 
 ## Proposed solution I will work on in next months.
 
 * Make the FTP a separate tmux triggered process
 * Start a new log file periodically
 * Reduce the amount of data sent to log file when R Pi is "idle" and fan not in use.
+* Periodically check a flag in config.cfg signalling new values entered.
 
 ## Install Tmux
 
